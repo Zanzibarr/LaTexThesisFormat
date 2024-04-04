@@ -93,11 +93,28 @@
 \raggedright\large Example Supervisor\\
 \vfill
 \raggedright\textbf{\large Candidates:} \\
-\raggedright\large Zanella Matteo (2122187)\\
+\raggedright\large Zanella Matteo\\
 \vfill
 
 \end{center}
 \end{titlepage}
+
+\pagenumbering{roman}
+\thispagestyle{empty}
+\clearpage{\pagestyle{plain}\cleardoublepage}
+    
+\clearpage\null\newpage
+
+% Abstract
+\newcommand\summaryname{Abstract}
+\newenvironment{Abstract} {
+    \begin{center}%
+    \bfseries{\summaryname} \end{center}
+}
+    
+\begin{Abstract}
+This is an example of an abstract.
+\end{Abstract}
 
 % Index
 \clearpage{\pagestyle{plain}\cleardoublepage}
@@ -105,14 +122,21 @@
 %\listoffigures
 %\listoftables
 
-%\afterpage{\blankpage}
-
 \clearpage{\pagestyle{plain}\cleardoublepage}
 \pagenumbering{arabic}
+
+\afterpage{\blankpage}
 
 % Chapter 1
 \clearpage{\pagestyle{plain}\cleardoublepage}
 \chapter{Introduction}
 \input{chapters/introduction}
+
+\afterpage{\blankpage}
+    
+% Bibliography
+\clearpage{\pagestyle{plain}\cleardoublepage}
+\chapter{Bibliography}
+\input{chapters/bibliography}
 
 \end{document}
