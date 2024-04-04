@@ -1,0 +1,118 @@
+\pdfinfo{
+    /Author (Zanella Matteo)
+    /Title (Example title)
+    /Keyword ()
+}
+
+% Libraries
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{sectsty}
+\usepackage[inner=3cm,top=2cm,bottom=2cm,outer=2cm]{geometry}
+\usepackage{setspace}
+\usepackage[hang,small,sf,font=small, labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[usenames]{color}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tocloft}
+\usepackage[a-1b]{pdfx}
+\usepackage{hyperref}
+\usepackage{tabto}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+
+\usepackage{tikz}
+
+\usepackage{bbold}
+
+\usepackage{wrapfig}
+
+\usepackage[]{mdframed}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{cases}
+
+\usepackage{indentfirst}
+\setlength{\arrayrulewidth}{1pt}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+% Mandatory settings
+\onehalfspacing
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Subsections
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
+
+% Start document
+\begin{document}
+\begin{titlepage}
+\begin{center}
+
+\includegraphics[height=0.13\textheight]{logo_unipd.png}
+\hfill
+\includegraphics[height=0.13\textheight]{logo_dei.png}
+\newline
+\newline
+
+\vspace{0.8cm}
+\textsc{\LARGE Universit\`{a} degli Studi di Padova}\\
+\vspace{1.6cm}
+\textsc{\large 	School of Engineering Department of Information Engineering}\\
+\vspace{0.4cm}
+
+\textsc{\large Master Degree in Computer Engineering}\\
+\vfill
+{ \LARGE \bfseries Example of a Title}\\
+\vspace{1cm}
+
+\textbf{\large Example of a Subtitle}\\
+\vfill
+
+\raggedright\textbf{\large Supervisor:} \\
+\raggedright\large Example Supervisor\\
+\vfill
+\raggedright\textbf{\large Candidates:} \\
+\raggedright\large Zanella Matteo (2122187)\\
+\vfill
+
+\end{center}
+\end{titlepage}
+
+% Index
+\clearpage{\pagestyle{plain}\cleardoublepage}
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+%\afterpage{\blankpage}
+
+\clearpage{\pagestyle{plain}\cleardoublepage}
+\pagenumbering{arabic}
+
+% Chapter 1
+\clearpage{\pagestyle{plain}\cleardoublepage}
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\end{document}
