@@ -14,8 +14,6 @@
 \usepackage{setspace}
 \usepackage[hang,small,sf,font=small, labelfont=bf]{caption}
 \usepackage{subcaption}
-\usepackage{graphicx}
-\graphicspath{ {./images/} }
 \usepackage[usenames]{color}
 \usepackage{xcolor}
 \usepackage{colortbl}
@@ -24,25 +22,31 @@
 \usepackage{hyperref}
 \usepackage{tabto}
 \usepackage{mathtools}
+\usepackage{bbold}
+\usepackage{wrapfig}
+\usepackage[]{mdframed}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{cases}
+\usepackage{indentfirst}
+\usepackage{afterpage}
+
+%images
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+%tikz
+\usepackage{tikz}
+
+%pseudocode
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
 
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 
-\usepackage{tikz}
-
-\usepackage{bbold}
-
-\usepackage{wrapfig}
-
-\usepackage[]{mdframed}
-
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{cases}
-
-\usepackage{indentfirst}
 \setlength{\arrayrulewidth}{1pt}
-\usepackage{afterpage}
 \newcommand\blankpage{%
     \null
     \thispagestyle{empty}%
