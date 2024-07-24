@@ -5,7 +5,7 @@
 }
 
 % Libraries
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,twoside,12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{fancyhdr}
@@ -27,9 +27,12 @@
 \usepackage[]{mdframed}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{cases}
 \usepackage{indentfirst}
 \usepackage{afterpage}
+\usepackage{placeins}
+\usepackage{csquotes}
 
 %images
 \usepackage{graphicx}
@@ -37,6 +40,7 @@
 
 %tikz
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 
 %pseudocode
 \usepackage{algorithm}
@@ -68,39 +72,47 @@
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
 
+% Bibliography
+\usepackage[sorting=none]{biblatex}
+\addbibresource{bibl.bib}
+
 % Start document
 \begin{document}
 \begin{titlepage}
-\begin{center}
+    \centering
+    \begin{center}
 
-\includegraphics[height=0.13\textheight]{logo_unipd.png}
-\hfill
-\includegraphics[height=0.13\textheight]{logo_dei.png}
-\newline
-\newline
+        \includegraphics[height=0.13\textheight]{logo_unipd.png}
+        \hfill
+        \includegraphics[height=0.13\textheight]{logo_dei.png}
+        \newline
+        \newline
 
-\vspace{0.8cm}
-\textsc{\LARGE Universit\`{a} degli Studi di Padova}\\
-\vspace{1.6cm}
-\textsc{\large 	School of Engineering Department of Information Engineering}\\
-\vspace{0.4cm}
+        \vspace{0.8cm}
+        \textsc{\LARGE Universit\`{a} degli Studi di Padova}\\
+        \vspace{1.6cm}
+        \textsc{\large 	School of Engineering Department of Information Engineering}\\
+        \vspace{0.4cm}
 
-\textsc{\large Master Degree in Computer Engineering}\\
-\vfill
-{ \LARGE \bfseries Example of a Title}\\
-\vspace{1cm}
+        \textsc{\large Master Degree in Computer Engineering}\\
+        \vfill
+        { \LARGE \bfseries Example of a Title}\\
+        \vspace{1cm}
 
-\textbf{\large Example of a Subtitle}\\
-\vfill
+        \textbf{\large Example of a Subtitle}\\
+        \vfill
 
-\raggedright\textbf{\large Supervisor:} \\
-\raggedright\large Example Supervisor\\
-\vfill
-\raggedright\textbf{\large Candidates:} \\
-\raggedright\large Zanella Matteo\\
-\vfill
+        \textit{\large Supervisor:} \hfill \textit{\large Candidate:}\\
+        \textsc{\large Professor} \hfill \textsc{Zanella Matteo}\\
+        \textsc{Università di Padova} \hfill \textsc{Badge\_number}\\
 
-\end{center}
+        \vfill
+
+        Academic Year 2024/2025
+
+        \vfill
+
+    \end{center}
 \end{titlepage}
 
 \pagenumbering{roman}
@@ -115,10 +127,14 @@
     \begin{center}%
     \bfseries{\summaryname} \end{center}
 }
-    
+
+\vspace*{50px}
+
 \begin{Abstract}
 This is an example of an abstract.
 \end{Abstract}
+
+\afterpage{\blankpage}
 
 % Index
 \clearpage{\pagestyle{plain}\cleardoublepage}
@@ -129,18 +145,19 @@ This is an example of an abstract.
 \clearpage{\pagestyle{plain}\cleardoublepage}
 \pagenumbering{arabic}
 
-\afterpage{\blankpage}
-
 % Chapter 1
 \clearpage{\pagestyle{plain}\cleardoublepage}
 \chapter{Introduction}
 \input{chapters/introduction}
 
+% Chapter 2
+\clearpage{\pagestyle{plain}\cleardoublepage}
+\chapter{Other Chapter}
+\input{chapters/otherchapter}
+
 \afterpage{\blankpage}
     
 % Bibliography
-\clearpage{\pagestyle{plain}\cleardoublepage}
-\chapter{Bibliography}
-\input{chapters/bibliography}
+\printbibliography
 
 \end{document}

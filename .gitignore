@@ -6,3 +6,9 @@
 *.toc
 *.xmpi
 *.fdb_latexmk
+.trunk
+.DS_Store
+*.bcf
+*.run.xml
+*.blg
+*.bbl
